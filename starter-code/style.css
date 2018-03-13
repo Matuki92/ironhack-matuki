@@ -1,0 +1,162 @@
+* {
+  margin: 0;
+  padding: 0;
+  
+  box-sizing: border-box;
+}
+
+nav {
+  background-color: #C12127;
+  color: rgba(255,255,255,0.8);
+  padding: 12px;
+}
+
+a {
+  color: rgba(255,255,255,0.8);
+  text-decoration-line: none;              /* Link underlines off */
+}
+
+h1 {
+  font-size: 35px;
+}
+
+.top-left, .nav-links, .nav-links li {
+  display: inline-block;
+}
+
+.nav-links {
+  position: absolute;
+  right:15px;              /* Moving the nav-bar links to the top left side */
+}
+
+.nav-links li, .acronym {
+  margin: 0 15px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 15px;        
+}
+
+.acronym {
+  font-size: 17px;
+}
+
+.container {
+  width: 100%;
+  height: 440px;
+}
+
+.header {
+ background-image: url(./images/city-scape.svg);
+ background-size: cover;
+}
+
+.headertop {
+  padding: 18px;
+  width: 100%;
+  height: 30%;
+}
+
+.headertop a, .headertop p {
+  display: inline;
+  color:rgb(221, 221, 221);
+}
+
+.searchbar {
+  width: 80%;
+  margin: 0 20px;
+  background: #074b68;
+  border:1px solid #3a738b;
+  height: 50px;
+  padding-left: 20px;
+  vertical-align:top;
+}
+
+.headerbottom {
+  width: 50%;
+  height:70%;
+  margin: 0 auto;
+  color:white;
+  font-size: 20px;
+}
+
+.button {
+  font-size: 20px;
+  color:white;
+  padding: 8px 20px;;
+  border-radius: 25px;
+}
+
+.npm {
+  background: rgb(230, 149, 0);
+  border-color: rgb(230, 149, 0);
+}
+
+.section-1 {
+ background: rgb(39, 53, 71);
+ height: 500px;
+}
+
+.wrap {
+  width: 60%;
+  margin:  auto;
+  padding: 5%;
+  color:white;
+}
+
+.right {
+  float:right;
+  width:40%;
+  font-size: 15px;
+}
+
+.orgs {
+  background: rgb(221, 0, 0);
+  border-color:rgb(221, 0, 0);
+}
+
+.section-2 {
+  background-image: url(./images/forklift.svg);
+  background-size: cover;
+  font-size: 20px;
+  height: 500px;
+}
+
+.install {
+  background: rgb(39, 53, 71);
+  border-color: rgb(39, 53, 71);
+}
+
+.section-3 {
+  height: 500px;
+}
+
+.three-heading {
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+  padding: 3%;
+}
+
+.three-heading p {
+  color:gray;
+}
+
+.bottom-wrap {
+  width: 50%;
+  margin: 0 auto;
+  padding-bottom: 3%;
+}
+
+.box {
+  display: inline-block;
+  text-align: center;
+  width: 33%;
+  margin: 0 auto;
+}
+
+.box p {
+  color:gray;
+}
+
+.box a {
+  color:rgb(187, 0, 0);
+}

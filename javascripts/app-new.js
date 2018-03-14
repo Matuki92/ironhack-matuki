@@ -5,24 +5,25 @@ var kata = {
   direction : "S",
   row: 0,
   col: 0,
+  travelLog: []
 }
 var bot1 = {
   name : "Bob",
   direction : "S",
   row: 0,
-  col: 9,
+  col: 9
 }
 var bot2 = {
   name : "Mel",
   direction : "N",
   row: 9,
-  col: 0,
+  col: 0
 }
 var bot3 = {
   name : "Yol",
   direction : "N",
   row: 9,
-  col: 9,
+  col: 9
 }
 // ======================
 
@@ -61,10 +62,10 @@ for (var i = 0; i < grid.length; i++){
 
 }
 
-console.log("\nCall the functions moveForward(), moveBackwards(), turnLeft(), turnRight() to move Kata.\nBot rovers move after you\nThe directions each rover is facing is shown on the grid\n\"###\" stands for obstacle.")
+console.log("\nCall the functions moveForward(), moveBackwards(), turnLeft(), turnRight() or send a command, for example: commands(\"flffffffrfffffrfbbbb\") to move Kata.\nBot rovers move after you\nThe directions each rover is facing is shown on the grid\n\"###\" stands for obstacle.")
 // ==================================================
 
-//Print grid and movements
+//Print grid.
 function print(){
 
   for (var i = 0; i < grid.length; i++){
@@ -75,7 +76,7 @@ function print(){
 }
 // ==================================================
 
-// Bot movement pick.
+// Bot movements.
 function moveBot(rover){
 
   var rnd = Math.floor(Math.random()*4)
@@ -89,6 +90,15 @@ function moveBot(rover){
 
   }
 }
+
+function moveAllBots(){
+
+  moveBot(bot1);
+  moveBot(bot2);
+  moveBot(bot3);
+
+}
+
 // ==================================================
 
 // General movement functions.
@@ -152,15 +162,32 @@ function rotateL(rover){
   place(rover);
 
 }
+
+function commands(string){
+
+  for (var i = 0; i < string.length; i++){
+
+    switch (string[i]){
+
+      case "f": forward(kata);moveAllBots();kata.travelLog.push(kata.row, kata.col + ", ");break;
+      case "r": rotateR(kata);moveAllBots();break;
+      case "b": backwards(kata);moveAllBots();kata.travelLog.push(kata.row, kata.col + ", ");break;
+      case "l": rotateL(kata);moveAllBots();break;
+      default: console.log("(" + string[i] + "), command not found!");
+    }
+  }
+
+  print();
+  console.log("\nCoordinates our rover has been so far: " + kata.travelLog);
+}
+
 // ==================================================
 
 // Main user movement functions.
 function moveForward(){
 
   forward(kata);
-  moveBot(bot1);
-  moveBot(bot2);
-  moveBot(bot3);
+  moveAllBots();
 
   print();
 
@@ -169,9 +196,7 @@ function moveForward(){
 function moveBackwards(){
 
   backwards(kata);
-  moveBot(bot1);
-  moveBot(bot2);
-  moveBot(bot3);
+  moveAllBots();
 
   print();
 
@@ -180,9 +205,7 @@ function moveBackwards(){
 function turnLeft(){
 
   rotateL(kata);
-  moveBot(bot1);
-  moveBot(bot2);
-  moveBot(bot3);
+  moveAllBots();
 
   print();
 
@@ -191,9 +214,7 @@ function turnLeft(){
 function turnRight(){
 
   rotateR(kata);
-  moveBot(bot1);
-  moveBot(bot2);
-  moveBot(bot3);
+  moveAllBots();
 
   print();
 
